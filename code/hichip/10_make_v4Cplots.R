@@ -42,6 +42,7 @@ matrix_files <- paste0(base_dir, "/hichip.", samples, "/matrices/hichip.", sampl
 
 # Import sparse matrix counts 
 samples_list <- lapply(matrix_files, importTable); names(samples_list) <- samples
+saveRDS(samples_list, file = "../../../hichip_meelad_1kb_res.rds")
 
 # Function takes a GRanges of the v4C view point and the width around the viewpoint (to be padded on both sides)
 make_v4C_plot <- function(v4C_one, width_around_viewpoint= 200000){
