@@ -66,5 +66,6 @@ heatmaply(m, colors = jdb_palette("solar_extra"))
 plotDeviationsTsne(dev, deviationsTsne(dev, perplexity = 15, threshold = 2.5), sample_column = "cell.type",
                     shiny = FALSE)[[1]] %>% plotly::ggplotly()
 
-
+# Export data
+saveRDS(round(assays(dev)[["z"]], 2), file = "../../output/27JULY_chromvar_execution.rds")
 
